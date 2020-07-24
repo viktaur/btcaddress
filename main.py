@@ -3,8 +3,9 @@ import hashlib
 # loop = True
 
 def skBinary():
-    bin = input("Introduce the binary secret key: ")
+    bin = eval(input("Introduce the binary secret key: "))
     hex = hex(int(bin, 2))
+    print(hex)
 
 def skHex():
     inputHex = input("Introduce the hexadecimal secret key: ")
