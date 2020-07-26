@@ -1,10 +1,13 @@
 import hashlib
 
-# loop = True
+# def hexa(a, b):
+    # return hex(a, b)
+
+print(hex(int("000101", 2)))
 
 def skBinary():
-    bin = str(input("Introduce the binary secret key: "))
-    hex = hex(int(bin, 2))
+    bin = input("Introduce the binary secret key: ")
+    hex = format(int(bin, 2), 'x').upper()
     print(hex)
 
 def skHex():
@@ -18,10 +21,13 @@ def inputloop():
     while True:
         if sk_type in ["B", "b"]:
             skBinary()
+            break
         elif sk_type in ["H", "h"]:
             skHex()
+            break
         elif sk_type in ["C", "c"]:
             skB58()
+            break
         else:
             print("Please try again")
             inputloop()
