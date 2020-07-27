@@ -14,11 +14,12 @@ def skBinary():
     bin = input("Introduce the binary secret key: ")
     hex = format(int(bin, 2), 'x').upper()
     b58 = bitcoin.hex_to_b58check(hex, magicbyte=128)
+    # wif =
     print(BRed + "DO NOT SHARE WITH ANYONE")
     print(BRed + "The binary secret key is:" + Red, bin)
     print(BRed + "The hexadecimal secret key is:" + Red, hex)
     print(BRed + "The B58Check secret key is:" + Red, b58)
-
+    quit()
 
 def skHex():
     hex = input("Introduce the hexadecimal secret key: ")
