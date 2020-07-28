@@ -6,6 +6,7 @@ import platform
 import random
 import time
 import bitcoin
+import binascii
 
 def clear():
     subprocess.Popen("cls" if platform.system() == "Windows" else "clear", shell=True)
@@ -33,7 +34,7 @@ def skBinary():
     bin = input("Introduce the binary secret key: ")
     hex = format(int(bin, 2), 'x').upper()
     b58 = bitcoin.hex_to_b58check(hex, magicbyte=128)
-    wif = base58(str(b58))
+    wif = base58(b58)
     print(BRed + "PRIVATE INFORMATION (DO NOT SHARE WITH ANYONE):")
     print(BRed + "The binary secret key is:" + Red, bin)
     print(BRed + "The hexadecimal secret key is:" + Red, hex)
@@ -43,6 +44,15 @@ def skBinary():
 
 def skHex():
     hex = input("Introduce the hexadecimal secret key: ")
+    bin = bin(int(hex, 16))[2:]
+    b58 = bitcoin.hex_to_b58check(hex, magicbyte=128)
+    # wif = base58(b58)
+    print(BRed + "PRIVATE INFORMATION (DO NOT SHARE WITH ANYONE):")
+    print(BRed + "The binary secret key is:" + Red, bin)
+    print(BRed + "The hexadecimal secret key is:" + Red, hex)
+    print(BRed + "The B58Check WIF compressed secret key is:" + Red, b58)
+    # print(BRed + "WIF (public key) is:" + Red, wif)
+    quit()
 
 def skB58():
     B58 = input("Introduce the B58Check secret key: ")
