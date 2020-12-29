@@ -10,4 +10,4 @@ python3 -m pip install -r requirements.txt
 
 ### Support this project
 qrswcg38p2mlkuqnh3dh2qn9flgnd2k4tsthp58a0a (BCH)
-bc1qpp3cquc58qt9aj078t2huhlldwscg7sxgja5c9 (BTC)
+1CYQRJdvijJoa2x53HmWv6FywLQzPCYnVk (BTC)
